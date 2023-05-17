@@ -18,21 +18,5 @@ spec:
     spec:
       containers:
         - name: jaguar-udf
-          image: repo.iris.tools/iris/jaguar_udf:v1
+          image: repo.iris.tools/irisdev/jaguar_udf:dev
           imagePullPolicy: IfNotPresent
-          volumeMounts:
-            - mountPath: /mount
-              name: extvolume
-            - mountPath: /app/src/conf/nginx.conf
-              subPath: nginx.conf
-              name: jaguar-udf-cm
-            - mountPath: /app/src/conf/vue.config.js
-              subPath: vue.config.js
-              name: jaguar-udf-cm
-      volumes:
-        - name: extvolume
-          persistentVolumeClaim:
-            claimName: pvc-iris
-        - name: jaguar-udf-cm
-          configMap:
-            name: jaguar-udf-cm
