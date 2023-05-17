@@ -24,8 +24,5 @@ COPY src/nginx.conf /etc/nginx/conf.d/default.conf
 # 빌드된 앱 파일 복사
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
-# 컨테이너의 80번 포트 열기
-EXPOSE 8080
-
 # Nginx 서버 실행
 CMD ["nginx", "-g", "daemon off;"]
