@@ -1,7 +1,7 @@
 const config = {
     prod: {
-        JAGUAR_URL: process.env.VUE_APP_JAGUAR_URL,
-        JAGUAR_PORT: process.env.VUE_APP_JAGUAR_URL,
+        JAGUAR_URL: "172.16.0.119",
+        JAGUAR_PORT: "8080",
     },
 };
 
