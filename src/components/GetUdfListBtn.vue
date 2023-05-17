@@ -4,7 +4,7 @@
 
 <script>
 import axios from "axios";
-import vueConfig from "../conf/vue.config";
+import vueConfig from "../vue.config";
 
 export default {
     name: "GetUdfListBtn",

@@ -1,6 +1,6 @@
 const config = {
     prod: {
-        JAGUAR_URL: "172.16.0.119",
+        JAGUAR_URL: "jaguar-svc",
         JAGUAR_PORT: "8080",
     },
 };
