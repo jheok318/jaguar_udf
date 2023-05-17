@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jaguar-udf
+  labels:
+    app: jaguar-udf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jaguar-udf
+  template:
+    metadata:
+      name: jaguar-udf
+      labels:
+        app: jaguar-udf
+    spec:
+      containers:
+        - name: jaguar-udf
+          image: repo.iris.tools/iris/jaguar_udf:v1
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/nginx/conf.d
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: jaguar-udf
+      restartPolicy: Always

@@ -11,6 +11,7 @@
 
 <script>
 import axios from "axios";
+import vueConfig from "@/vue.config";
 
 export default {
     name: "UploadUdfFileBtn",
@@ -52,7 +53,7 @@ export default {
                 formData.append("file", file);
 
                 axios
-                    .post("http://172.16.0.119:8080/jaguar/udf/" + this.userId + "/upload", formData, {
+                    .post(`http://${vueConfig.prod.JAGUAR_URL}:${vueConfig.prod.JAGUAR_PORT}/jaguar/udf/${this.userId}/upload`, formData, {
                         headers: {
                             "Content-Type": "multipart/form-data; boundary=WebAppBoundary"
                         }

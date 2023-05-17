@@ -4,6 +4,7 @@
 
 <script>
 import axios from "axios";
+import vueConfig from "@/vue.config";
 
 export default {
     name: "DeleteUdfFileBtn",
@@ -23,7 +24,7 @@ export default {
     },
     methods: {
         fetchData() {
-            axios.post('http://172.16.0.119:8080/jaguar/udf/' + this.userId + '/delete', {
+            axios.post(`http://${vueConfig.prod.JAGUAR_URL}:${vueConfig.prod.JAGUAR_PORT}/jaguar/udf/${this.userId}/delete`, {
                 "func_name": this.fileName,
                 "func_owner": this.fileOwner
             })

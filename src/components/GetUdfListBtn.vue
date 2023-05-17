@@ -4,10 +4,15 @@
 
 <script>
 import axios from "axios";
-
+import vueConfig from "../vue.config";
 
 export default {
     name: "GetUdfListBtn",
+    computed: {
+        vueConfig() {
+            return vueConfig
+        }
+    },
     props: {
         userId: {
             type: String,
@@ -16,8 +21,9 @@ export default {
     },
     methods: {
         fetchData() {
+            console.log(`http://${vueConfig.prod.JAGUAR_URL}:${vueConfig.prod.JAGUAR_PORT}/jaguar/udf/${this.userId}`)
             axios
-                .get("http://172.16.0.119:8080/jaguar/udf/" + this.userId)
+                .get(`http://${vueConfig.prod.JAGUAR_URL}:${vueConfig.prod.JAGUAR_PORT}/jaguar/udf/${this.userId}`)
                 .then((response) => {
                     this.$emit("data-updated", response.data);
                 })
