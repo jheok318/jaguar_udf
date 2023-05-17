@@ -8,11 +8,6 @@ import vueConfig from "../vue.config";
 
 export default {
     name: "GetUdfListBtn",
-    computed: {
-        vueConfig() {
-            return vueConfig
-        }
-    },
     props: {
         userId: {
             type: String,
