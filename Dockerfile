@@ -19,7 +19,7 @@ RUN npm run build
 FROM nginx:1.21
 
 # Nginx 설정 파일 복사
-COPY src/nginx.conf /etc/nginx/conf.d/default.conf
+COPY src/conf/nginx.conf /etc/nginx/conf.d/default.conf
 
 # 빌드된 앱 파일 복사
 COPY --from=build-stage /app/dist /usr/share/nginx/html

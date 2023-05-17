@@ -4,7 +4,7 @@
 
 <script>
 import axios from "axios";
-import vueConfig from "../vue.config";
+import vueConfig from "../conf/vue.config";
 
 export default {
     name: "GetUdfListBtn",
@@ -21,7 +21,6 @@ export default {
     },
     methods: {
         fetchData() {
-            console.log(`http://${vueConfig.prod.JAGUAR_URL}:${vueConfig.prod.JAGUAR_PORT}/jaguar/udf/${this.userId}`)
             axios
                 .get(`http://${vueConfig.prod.JAGUAR_URL}:${vueConfig.prod.JAGUAR_PORT}/jaguar/udf/${this.userId}`)
                 .then((response) => {

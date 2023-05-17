@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jaguar-udf
+  namespace: iris-vdap-cicd
   labels:
     app: jaguar-udf
 spec:
@@ -20,12 +21,18 @@ spec:
           image: repo.iris.tools/iris/jaguar_udf:v1
           imagePullPolicy: IfNotPresent
           volumeMounts:
-            - name: config-volume
-              mountPath: /etc/nginx/conf.d
-            - name: config-volume
-              mountPath: /app/config
+            - mountPath: /mount
+              name: extvolume
+            - mountPath: /app/src/nginx.conf
+              subPath: nginx.conf
+              name: jaguar-udf-cm
+            - mountPath: /app/src/vue.config.js
+              subPath: vue.config.js
+              name: jaguar-udf-cm
       volumes:
-        - name: config-volume
+        - name: extvolume
+          persistentVolumeClaim:
+            claimName: pvc-iris
+        - name: jaguar-udf-cm
           configMap:
-            name: jaguar-udf
-      restartPolicy: Always
+            name: jaguar-udf-cm

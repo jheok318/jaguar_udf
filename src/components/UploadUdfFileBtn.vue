@@ -11,7 +11,7 @@
 
 <script>
 import axios from "axios";
-import vueConfig from "@/vue.config";
+import vueConfig from "@/conf/vue.config";
 
 export default {
     name: "UploadUdfFileBtn",
