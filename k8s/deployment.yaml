@@ -23,10 +23,10 @@ spec:
           volumeMounts:
             - mountPath: /mount
               name: extvolume
-            - mountPath: /app/src/nginx.conf
+            - mountPath: /app/src/conf/nginx.conf
               subPath: nginx.conf
               name: jaguar-udf-cm
-            - mountPath: /app/src/vue.config.js
+            - mountPath: /app/src/conf/vue.config.js
               subPath: vue.config.js
               name: jaguar-udf-cm
       volumes:
