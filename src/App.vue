@@ -24,7 +24,7 @@
             <UdfResult :data="currentData" :dataType="currentDataType"></UdfResult>
         </div>
     </div>
-    <div class="description-box">
+    <div class="description-box animate__animated animate__fadeIn">
         <h2 id="using-for-udf-cmd">Using for UDF cmd</h2>
         <p>이 웹 사이트는 Jaguar 의 udf 함수를 좀 더 쉽게 관리하기 위해 제작하였습니다</p>
         <h3 id="-">주의사항</h3>
@@ -118,12 +118,6 @@ export default {
 </script>
 
 <style>
-.description-box {
-    background-color: #f0f0f0;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
 .button-container {
     display: flex;
     align-items: flex-start;
@@ -143,5 +137,11 @@ export default {
 
 .result-container {
     margin-top: 20px;
+}
+
+.description-box {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 </style>
