@@ -1,0 +1,1 @@
+docker buildx build --load --builder=container -f Dockerfile -t repo.iris.tools/irisdev/jaguar_udf:45698 .
