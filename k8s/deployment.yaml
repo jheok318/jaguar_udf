@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jaguar-udf
-  namespace: iris-vdap-cicd
+  namespace: iris
   labels:
     app: jaguar-udf
 spec:
@@ -18,5 +18,5 @@ spec:
     spec:
       containers:
         - name: jaguar-udf
-          image: repo.iris.tools/irisdev/jaguar_udf:dev
+          image: repo.iris.tools/irisdev/jaguar_udf:port-45698
           imagePullPolicy: IfNotPresent
