@@ -19,15 +19,33 @@
             <div class="button-wrapper">
                 <UploadUdfFileBtn v-if="!reloadUploadBtn" @data-updated="updateData('data4', $event, userId, fileName, fileOwner) " :user-id="userId" :file-name="fileName" :file-owner="fileOwner"></UploadUdfFileBtn>
             </div>
+            <div class="button-wrapper">
+                <DownloadExampleBtn @click="reloadComponent"></DownloadExampleBtn>
+            </div>
         </div>
         <div class="result-container">
             <UdfResult :data="currentData" :dataType="currentDataType"></UdfResult>
         </div>
     </div>
-    <div class="description-box animate__animated animate__fadeIn">
+    <div class="description-box">
         <h2 id="using-for-udf-cmd">Using for UDF cmd</h2>
         <p>이 웹 사이트는 Jaguar 의 udf 함수를 좀 더 쉽게 관리하기 위해 제작하였습니다</p>
-        <h3 id="-">주의사항</h3>
+        <h3 id="-test_udf-py">예시 test_udf.py</h3>
+        <pre><code><span class="hljs-keyword">import</span> polars <span class="hljs-keyword">as</span> pl
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(df: pl.DataFrame, args: str)</span> -&gt; pl.DataFrame:</span>
+    <span class="hljs-string">"""
+    Write your function
+
+    if you want to use pandas dataframe, exchange from pl.DataFrame to pd.DataFrame
+    ex:) pdf = df.to_pandas()
+    """</span>
+    pass
+
+    <span class="hljs-keyword">return</span> df
+</code></pre><h3 id="-">주의사항</h3>
         <p>이 web 은 portotype 임으로 사용법의 순서에 맞게 동작해야합니다</p>
         <h3 id="-">사용법</h3>
         <h4 id="get-udf-list">Get Udf List</h4>
