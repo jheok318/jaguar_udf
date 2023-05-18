@@ -1,7 +1,7 @@
 const config = {
     prod: {
-        JAGUAR_URL: process.env.JAGUAR_SVC_SERVICE_HOST,
-        JAGUAR_PORT: process.env.JAGUAR_SVC_SERVICE_PORT,
+        JAGUAR_URL: "192.168.107.28",
+        JAGUAR_PORT: "36888",
     },
 };
 
