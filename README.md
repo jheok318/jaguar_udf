@@ -51,8 +51,8 @@ def run(df: pl.DataFrame, args: str) -> pl.DataFrame:
 
 ####  Upload Udf File
 1. User ID 에 사용자의 ID 를 작성합니다
-2. File Name 에 Udf List 에 등록된 파일의 이름을 작성합니다
-3. File Owner 에 Udf List 에 등록된 소유자의 이름을 작성합니다
+2. File Name 에 Udf List 에 등록할 파일의 이름을 작성합니다 (파일이름에 .py 를 제거합니다)
+3. File Owner 에 Udf List 에 등록할 소유자의 이름을 작성합니다
 4. 확인을 누릅니다
 5. Upload Udf File 버튼을 클릭합니다
 6. 업로드할 파일을 선택합니다
@@ -62,3 +62,6 @@ def run(df: pl.DataFrame, args: str) -> pl.DataFrame:
 * | udf func_name='only_TEL' func_owner='root'
 * | udf func_name='only_TEL' func_owner='root' args='col1='학년_A', col2='학교A''
 ```
+
+- args='~~'
+  - `' '` 의 내용이 string 으로 그대로 전달됩니다
